@@ -29,6 +29,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-status-page \
 	haveged \
 	iptables \
+	ffwdh-bench \
 	iwinfo
 
 ##	DEFAULT_GLUON_RELEASE
