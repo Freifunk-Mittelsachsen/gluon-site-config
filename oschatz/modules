@@ -1,0 +1,4 @@
+GLUON_SITE_FEEDS='ffmisax'
+
+PACKAGES_FFMISAX_REPO=git://github.com/Freifunk-Mittelsachsen/ffmisax-packages.git
+PACKAGES_FFMISAX_COMMIT=90fe66a9a07626035e9c80cdf721c489ad427e44
