@@ -8,8 +8,9 @@ rm -r "images"
 
 for COMMUNITY in doebeln geringswalde hartha leisnig mittweida oschatz ostrau waldheim
 do
+  rm ~/gluon/site
   ln -s ~/gluon-site-config/$COMMUNITY ~/gluon/site
-  mkdir "images/"$COMMUNITY
+  mkdir -p "images/"$COMMUNITY
 
   for TARGET in  ar71xx-generic ar71xx-nand mpc85xx-generic x86-generic x86-kvm_guest x86-xen_domu x86-64
   do
