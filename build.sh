@@ -1,15 +1,29 @@
 #!/bin/bash
-
 # THIS SCRIPT MUST BE RUN FROM WITHIN THE GLUON-SITE-CONFIG PATH!
+#
+# Build Script for freifunk-mittelsachsen
+# * builds firmware for our COMMUNITIES
+# * uploads those files to the CDN
+# * sends a mail after completion with the logs
+#
+# by David "marvin" Noelte - 2016
+# email:  david@freifunk-mittelsachsen.de
+# www:    marvin.github.com
+# xmpp:   david@freifunk-mittelsachsen.de
+#
+#
 
 BRANCH=${2:-"stable"}
 COMMUNITIES=(augustusburg colditz doebeln floeha geringswalde grimma grossschirma hartha leisnig mittweida oschatz ostrau rosswein waldheim wermsdorf)
 TARGETS=(ar71xx-generic ar71xx-nand mpc85xx-generic x86-generic x86-kvm_guest x86-xen_domu x86-64)
 
+# clean up
 rm -r "images"
 rm /data1/gluon/build.log
 
-# clean and update
+#################
+# BUILDING FIRMWARE!
+#################
 for TARGET in ${TARGETS[@]}
 do
     cd /data1/gluon
@@ -35,8 +49,18 @@ do
        echo -e "Moving Images for $COMMUNITY ...\n\n" >> build.log
        mv /data1/gluon/output/images/factory/* /data1/gluon-site-config/images/$COMMUNITY/factory
        mv /data1/gluon/output/images/sysupgrade/* /data1/gluon-site-config/images/$COMMUNITY/sysupgrade
-       echo "Compilation complete for $COMMUNITY\n\n" >> build.log
+       echo -e "Compilation complete for $COMMUNITY\n\n" >> build.log
     done
 done
+
+#################
+# WIP: Upload files
+#################
+
+
+#################
+# WIP: send mail
+#################
+
 
 echo "Done :)"
