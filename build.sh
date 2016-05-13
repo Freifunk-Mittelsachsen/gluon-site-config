@@ -14,8 +14,8 @@
 #
 
 BRANCH=${2:-"stable"}
-COMMUNITIES=(augustusburg colditz doebeln floeha geringswalde grimma grossschirma hartha leisnig mittweida oschatz ostrau rosswein waldheim wermsdorf)
-TARGETS=(ar71xx-generic ar71xx-nand mpc85xx-generic x86-generic x86-kvm_guest x86-xen_domu x86-64)
+COMMUNITIES=( augustusburg colditz doebeln floeha geringswalde grimma grossschirma hartha leisnig mittweida oschatz ostrau rosswein waldheim wermsdorf )
+TARGETS=( ar71xx-generic ar71xx-nand mpc85xx-generic x86-generic x86-kvm_guest x86-xen_domu x86-64 )
 
 # clean up
 rm -r "images"
