@@ -3,11 +3,12 @@
 # THIS SCRIPT MUST BE RUN FROM WITHIN THE GLUON-SITE-CONFIG PATH!
 
 BRANCH=${2:-"stable"}
+COMMUNITIES=(augustusburg colditz doebeln floeha geringswalde grimma grossschirma hartha leisnig mittweida oschatz ostrau rosswein waldheim wermsdorf)
 
 rm -r "images"
 rm build.log
 
-for COMMUNITY in leisnig waldheim doebeln geringswalde hartha mittweida oschatz ostrau rosswein
+for COMMUNITY in $COMMUNITIES
 do
   rm /data1/gluon/site
   ln -s /data1/gluon-site-config/$COMMUNITY /data1/gluon/site
@@ -26,7 +27,7 @@ do
   		echo -e "\n\n\n============================================================\n\n" >> build.log
   done
 
-  mv /data1/gluon/output/images /data1/gluon-site-config/images/$COMMUNITY
+  mv /data1/gluon/output/images/* /data1/gluon-site-config/images/$COMMUNITY
   echo "Compilation complete for $COMMUNITY"
 done
 
