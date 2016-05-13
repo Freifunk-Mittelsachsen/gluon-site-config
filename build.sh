@@ -19,25 +19,22 @@ do
     echo -e "\n\n\nmake GLUON_TARGET=$TARGET GLUON_BRANCH=$BRANCH clean -j6" >> build.log
     make GLUON_TARGET=$TARGET GLUON_BRANCH=$BRANCH clean -j6 >> build.log 2>&1
     echo -e "\n\n\n============================================================\n\n" >> build.log
-done
 
-for COMMUNITY in $COMMUNITIES
-do
-  rm /data1/gluon/site
-  ln -s /data1/gluon-site-config/$COMMUNITY /data1/gluon/site
-  mkdir -p /data1/gluon-site-config/images/$COMMUNITY
+    for COMMUNITY in $COMMUNITIES
+    do
+       rm /data1/gluon/site
+       ln -s /data1/gluon-site-config/$COMMUNITY /data1/gluon/site
+       mkdir -p /data1/gluon-site-config/images/$COMMUNITY /data1/gluon-site-config/images/$COMMUNITY/factory /data1/gluon-site-config/images/$COMMUNITY/sysupgrade
 
-  for TARGET in $TARGETS
-  do
-      cd /data1/gluon
-  		echo "Starting work on target $TARGET for $COMMUNITY" | tee -a build.log
-  		echo -e "\n\n\nmake GLUON_TARGET=$TARGET GLUON_BRANCH=$BRANCH -j6" >> build.log
-  		make GLUON_TARGET=$TARGET GLUON_BRANCH=$BRANCH -j6 >> build.log 2>&1
-  		echo -e "\n\n\n============================================================\n\n" >> build.log
-  done
+       echo "Starting work on target $TARGET for $COMMUNITY" | tee -a build.log
+       echo -e "\n\n\nmake GLUON_TARGET=$TARGET GLUON_BRANCH=$BRANCH -j6" >> build.log
+       make GLUON_TARGET=$TARGET GLUON_BRANCH=$BRANCH -j6 >> build.log 2>&1
+       echo -e "\n\n\n============================================================\n\n" >> build.log
 
-  mv /data1/gluon/output/images/* /data1/gluon-site-config/images/$COMMUNITY
-  echo "Compilation complete for $COMMUNITY"
+       mv /data1/gluon/output/images/factory/* /data1/gluon-site-config/images/$COMMUNITY/factory
+       mv /data1/gluon/output/images/sysupgrade/* /data1/gluon-site-config/images/$COMMUNITY/sysupgrade
+       echo "Compilation complete for $COMMUNITY"
+    done
 done
 
 echo "Done :)"
