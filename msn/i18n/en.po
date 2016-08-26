@@ -12,26 +12,27 @@ msgstr ""
 
 msgid "gluon-config-mode:welcome"
 msgstr ""
-"Welcome the the setup wizard of your new Freifunk Geringswalde node. "
+"Welcome the the setup wizard of your new Freifunk Mittelsachsen node. "
 "Please fill out the following form and transmit it."
 
 msgid "gluon-config-mode:pubkey"
 msgstr ""
 "<p>The node is currently rebooting and will try to connect to other "
 "nearby Freifunk nodes  after that. "
-"Your can find lots of information on the Freifunk Geringswalde community on "
-"<a href=\"https://www.freifunk-mittelsachsen.de/\">our homepage</a>.</p>"
+"Your can find lots of information on the Freifunk Mittelsachsen community on "
+"<a href=\"https://www.freifunk-Mittelsachsen.de/\">our homepage</a>.</p>"
 "<p>To get back to this configuration interface, press the reset button for "
 "3 seconds during normal operation. The device will then reboot into config "
 "mode.</p">
 "<p>Have fun with your node and exploring the Freifunk network!</p>"
 
+
 msgid "gluon-config-mode:reboot"
 msgstr ""
 "<p>The node is currently rebooting and will try to connect to other "
 "nearby Freifunk nodes  after that. "
-"Your can find lots of information on the Freifunk Geringswalde community on "
-"<a href=\"https://www.freifunk-mittelsachsen.de/\">our homepage</a>.</p>"
+"Your can find lots of information on the Freifunk Mittelsachsen community on "
+"<a href=\"https://www.freifunk-Mittelsachsen.de/\">our homepage</a>.</p>"
 "<p>To get back to this configuration interface, press the reset button for "
 "3 seconds during normal operation. The device will then reboot into config "
 "mode.</p">

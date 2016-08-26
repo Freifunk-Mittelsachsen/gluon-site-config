@@ -1,0 +1,6 @@
+= 26.8.2016
+* fixed wrong Finish-Page where "Augustusburg" is shown
+* added "ffmsn" community files for generell Freifunk Mittelsachsen Nodes
+  which are off the normal mittelsachsen community area
+* removed old *.save files
+* removed instructions to email key and replaced it with generell information
